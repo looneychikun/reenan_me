@@ -1,4 +1,11 @@
 {
   "name": "reenan_me",
-  "packageManager": "yarn@4.10.3"
+  "packageManager": "yarn@4.10.3",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "daisyui": "^5.1.25",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7"
+  }
 }
