@@ -1,16 +1,55 @@
 ---
+import '../styles/global.css'
 
+// Images
+// @ts-ignore
+import { Image } from 'astro:assets';
+// @ts-ignore
+import ChikunAvatar from '../assets/images/chikun_avatar.png';
+// Icons
+// @ts-ignore
+import SVGGithub from '../assets/icons/social/github.svg';
 ---
 
-<html lang="en">
+<html lang="en" data-theme="dracula">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>a bit of a Chikun - Andrew Reenan</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-linear-to-br from-base-100 to-base-300">
+		<div class="flex flex-col min-h-screen max-w-3xl mx-auto">
+			<header class="bg-base-300 h-35 p-4 pb-0 mb-0 mt-5 rounded-box rounded-b-none relative">
+				<div class="avatar float-right">
+					<div class="min-w-24 max-w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+						<Image src={ChikunAvatar} alt="Chikun Avatar"/>
+					</div>
+				</div>
+				<div class="flex flex-col ml-3 mt-5">
+					<p class="text-4xl font-bold">Andrew Reenan</p>
+					<p class="text-sm italic text-neutral ml-45"> - a bit of a Chikun</p>
+				</div>
+				<div class="absolute bottom-0 w-full flex">
+					<div role="tablist" class="tabs tabs-lift">
+						<a role="tab" class="tab tab-active">Home</a>
+						<a role="tab" class="tab">About</a>
+						<a role="tab" class="tab">Blog</a>
+					</div>
+					<div class="flex-grow">
+						<div class="w-5 h-5">
+							<SVGGithub width="auto" height="auto" class="stroke-primary stroke-[0.5]"/>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="flex-grow p-4 rounded-box border-l-1 border-l-base-300 rounded-t-none shadow-lg">
+				Content
+			</main>
+			<footer class="p-4 mb-5 mt-4 mx-auto">
+				<p class="text-neutral text-sm">&copy; 2025 Andrew Reenan</p>
+			</footer>
+		</div>
 	</body>
 </html>
