@@ -1,71 +1,10 @@
 ---
-import '../styles/global.css'
-
-// Components
-import SocialButton from '../components/SocialButton.astro'
-
-// Images
-import { Image } from 'astro:assets';
-import ChikunAvatar from '../assets/images/chikun_avatar.png';
-
+import MainLayout from '../layouts/Main.astro'
 ---
-
-<html lang="en" data-theme="dracula">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>a bit of a Chikun - Andrew Reenan</title>
-	</head>
-	<body class="bg-linear-to-br from-base-100 to-base-300 h-screen">
-		<div class="flex flex-col md:w-10/12 lg:w-8/12 mx-auto h-screen">
-			<header class="bg-base-300 md:h-37 p-4 pb-0 mb-0 md:mt-5 md:rounded-box md:rounded-b-none rounded-b-none relative">
-				<div class="flex flex-col text-center md:absolute md:right-5 md:top-5">
-					<div class="avatar justify-center">
-						<div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-							<Image src={ChikunAvatar} alt="Chikun Avatar" loading="eager"/>
-						</div>
-					</div>
-					<div class="text-center mt-5">
-						<div class="badge badge-outline badge-accent">Socials</div>
-						<div class="mt-2">
-							<SocialButton icon="Discord" url="https://discord.com/users/359850658310127627" fill="fill-sky-500"/>
-							<SocialButton icon="Github" url="https://github.com/looneychikun" fill="fill-neutral-content"/>
-							<SocialButton icon="Email" url="mailto:andrew@reenan.me" fill="fill-secondary"/>
-						</div>
-					</div>
-				</div>
-				<div class="flex flex-col ml-3 mt-5">
-					<p class="text-4xl font-bold text-center md:text-left">Andrew Reenan</p>
-					<p class="text-sm italic text-neutral text-center md:text-left md:ml-45"><span class="hidden md:inline">-</span> a bit of a Chikun</p>
-				</div>
-				<div class="md:absolute md:bottom-0 md:justify-start justify-center w-full flex mt-2">
-					<div role="tablist" class="tabs tabs-lift">
-						<a href="/#" role="tab" class="tab tab-active">Home</a>
-						<a href="/#" role="tab" class="tab">About</a>
-						<a href="/#" role="tab" class="tab">Blog</a>
-					</div>
-				</div>
-			</header>
-			<main class="flex flex-grow p-4 rounded-box md:border-l-1 md:border-l-base-300 rounded-t-none md:shadow-lg mb-auto">
-					<div class="w-2/3 flex-1 prose">
-						<h3>Sup</h3>
-						<p>I suppose your wondering why you're here.</p>
-						<h1 class="gradient-text border-b-2 border-neutral" style="--from: var(--color-accent); --to: var(--color-primary);">Good Question</h1>
-					</div>
-			</main>
-			<footer class="p-4 mb-5 mt-4 mx-auto text-center">
-				<p class="text-neutral text-sm">&copy; 2025 Andrew Reenan</p>
-			</footer>
-		</div>
-	</body>
-</html>
-
-<style>
-	.gradient-text {
-    background-image: linear-gradient(45deg, var(--from), var(--to));
-    background-clip: text;
-    color: transparent;
-}
-</style>
+<MainLayout>
+	<div class="flex-grow prose">
+		<h3>Sup</h3>
+		<p>I suppose your wondering why you're here.</p>
+		<h1 class="bg-linear-to-r from-accent to-primary bg-clip-text text-transparent">Good Question</h1>
+	</div>
+</MainLayout>
