@@ -1,0 +1,27 @@
+---
+import MainLayout from '../../layouts/Main.astro';
+---
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+    
+    .rogue {
+      font-family: 'Rouge Script', cursive;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 5em;
+    }
+</style>
+
+<MainLayout>
+  <div class="flex-grow">
+      <div class="flex-grow md:w-3/4">
+        <h1 class="rogue bg-linear-to-br from-accent to-primary bg-clip-text text-transparent text-center md:text-left"><span class="hidden md:inline">&nbsp;</span>a Taste of Chikun</h1>
+      </div>
+      <div class="prose">
+        <p>
+          Hahaha, wtf no.  I'll come up with another name later.
+        </p>
+      </div>
+  </div>
+</MainLayout>
