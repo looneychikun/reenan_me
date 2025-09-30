@@ -4,8 +4,13 @@ import tailwindcss from '@tailwindcss/vite';
 
 import cloudflare from '@astrojs/cloudflare';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://reenan.me/',
+  trailingSlash: 'always',
+
   vite: {
     plugins: [
       // @ts-ignore
@@ -16,4 +21,6 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: 'compile'
   }),
+
+  integrations: [sitemap()],
 });
