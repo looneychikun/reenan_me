@@ -1,14 +1,12 @@
 ---
 import '../styles/global.css'
 
+// Components
+import SocialButton from '../components/SocialButton.astro'
+
 // Images
 import { Image } from 'astro:assets';
 import ChikunAvatar from '../assets/images/chikun_avatar.png';
-
-// Icons
-import SVGGithub from '../assets/icons/social/github.svg';
-import SVGDiscord from '../assets/icons/social/discord.svg';
-import SVGEmail from '../assets/icons/social/email.svg';
 
 ---
 
@@ -32,9 +30,9 @@ import SVGEmail from '../assets/icons/social/email.svg';
 					<div class="text-center mt-5">
 						<div class="badge badge-outline badge-accent">Socials</div>
 						<div class="mt-2">
-							<div class="btn btn-circle btn-dash btn-neutral"><a href="https://discord.com/users/359850658310127627" target="_blank"><SVGDiscord class="fill-sky-500 w-8 inline mx-1"/></a></div>
-							<div class="btn btn-circle btn-dash btn-neutral"><a href="https://github.com/looneychikun" target="_blank"><SVGGithub class="fill-neutral-content w-8 inline mx-1"/></a></div>
-							<div class="btn btn-circle btn-dash btn-neutral"><a href="mailto:andrew@reenan.me" target="_blank"><SVGEmail class="fill-secondary w-8 inline mx-1"/></a></div>
+							<SocialButton icon="Discord" url="https://discord.com/users/359850658310127627" fill="fill-sky-500"/>
+							<SocialButton icon="Github" url="https://github.com/looneychikun" fill="fill-neutral-content"/>
+							<SocialButton icon="Email" url="mailto:andrew@reenan.me" fill="fill-secondary"/>
 						</div>
 					</div>
 				</div>
@@ -54,7 +52,7 @@ import SVGEmail from '../assets/icons/social/email.svg';
 					<div class="w-2/3 flex-1 prose">
 						<h3>Sup</h3>
 						<p>I suppose your wondering why you're here.</p>
-						<h1 class="gradient-text border-b-2 border-neutral" style="--from: #f3ec78; --to: #af4261;">Good Question</h1>
+						<h1 class="gradient-text border-b-2 border-neutral" style="--from: var(--color-accent); --to: var(--color-primary);">Good Question</h1>
 					</div>
 			</main>
 			<footer class="p-4 mb-5 mt-4 mx-auto text-center">
@@ -63,3 +61,11 @@ import SVGEmail from '../assets/icons/social/email.svg';
 		</div>
 	</body>
 </html>
+
+<style>
+	.gradient-text {
+    background-image: linear-gradient(45deg, var(--from), var(--to));
+    background-clip: text;
+    color: transparent;
+}
+</style>
