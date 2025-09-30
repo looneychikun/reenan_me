@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.1",
     "daisyui": "^5.1.25",

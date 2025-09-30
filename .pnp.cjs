@@ -29,6 +29,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@astrojs/check", "virtual:2f79682bd166c88d558e5cb3d539f40329eb448020efb860a73c813b3e8a4dd95c1e45837964598dda49a258ea6b5ea7667c8352e90fd9698535dc5b4f9adfb4#npm:0.9.4"],\
+          ["@tailwindcss/typography", "virtual:2f79682bd166c88d558e5cb3d539f40329eb448020efb860a73c813b3e8a4dd95c1e45837964598dda49a258ea6b5ea7667c8352e90fd9698535dc5b4f9adfb4#npm:0.5.19"],\
           ["@tailwindcss/vite", "virtual:2f79682bd166c88d558e5cb3d539f40329eb448020efb860a73c813b3e8a4dd95c1e45837964598dda49a258ea6b5ea7667c8352e90fd9698535dc5b4f9adfb4#npm:4.1.13"],\
           ["astro", "npm:5.14.1"],\
           ["daisyui", "npm:5.1.25"],\
@@ -1424,6 +1425,29 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/unplugged/@tailwindcss-oxide-win32-x64-msvc-npm-4.1.13-7dd3a04922/node_modules/@tailwindcss/oxide-win32-x64-msvc/",\
         "packageDependencies": [\
           ["@tailwindcss/oxide-win32-x64-msvc", "npm:4.1.13"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tailwindcss/typography", [\
+      ["npm:0.5.19", {\
+        "packageLocation": "../../../.yarn/berry/cache/@tailwindcss-typography-npm-0.5.19-0259eda217-10c0.zip/node_modules/@tailwindcss/typography/",\
+        "packageDependencies": [\
+          ["@tailwindcss/typography", "npm:0.5.19"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:2f79682bd166c88d558e5cb3d539f40329eb448020efb860a73c813b3e8a4dd95c1e45837964598dda49a258ea6b5ea7667c8352e90fd9698535dc5b4f9adfb4#npm:0.5.19", {\
+        "packageLocation": "./.yarn/__virtual__/@tailwindcss-typography-virtual-62f895e557/4/.yarn/berry/cache/@tailwindcss-typography-npm-0.5.19-0259eda217-10c0.zip/node_modules/@tailwindcss/typography/",\
+        "packageDependencies": [\
+          ["@tailwindcss/typography", "virtual:2f79682bd166c88d558e5cb3d539f40329eb448020efb860a73c813b3e8a4dd95c1e45837964598dda49a258ea6b5ea7667c8352e90fd9698535dc5b4f9adfb4#npm:0.5.19"],\
+          ["@types/tailwindcss", null],\
+          ["postcss-selector-parser", "npm:6.0.10"],\
+          ["tailwindcss", "npm:4.1.13"]\
+        ],\
+        "packagePeers": [\
+          "@types/tailwindcss",\
+          "tailwindcss"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4376,6 +4400,17 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["postcss-selector-parser", [\
+      ["npm:6.0.10", {\
+        "packageLocation": "../../../.yarn/berry/cache/postcss-selector-parser-npm-6.0.10-a4d7aaa270-10c0.zip/node_modules/postcss-selector-parser/",\
+        "packageDependencies": [\
+          ["cssesc", "npm:3.0.0"],\
+          ["postcss-selector-parser", "npm:6.0.10"],\
+          ["util-deprecate", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["prettier", [\
       ["npm:2.8.7", {\
         "packageLocation": "../../../.yarn/berry/cache/prettier-npm-2.8.7-1962ac9483-10c0.zip/node_modules/prettier/",\
@@ -4473,6 +4508,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@astrojs/check", "virtual:2f79682bd166c88d558e5cb3d539f40329eb448020efb860a73c813b3e8a4dd95c1e45837964598dda49a258ea6b5ea7667c8352e90fd9698535dc5b4f9adfb4#npm:0.9.4"],\
+          ["@tailwindcss/typography", "virtual:2f79682bd166c88d558e5cb3d539f40329eb448020efb860a73c813b3e8a4dd95c1e45837964598dda49a258ea6b5ea7667c8352e90fd9698535dc5b4f9adfb4#npm:0.5.19"],\
           ["@tailwindcss/vite", "virtual:2f79682bd166c88d558e5cb3d539f40329eb448020efb860a73c813b3e8a4dd95c1e45837964598dda49a258ea6b5ea7667c8352e90fd9698535dc5b4f9adfb4#npm:4.1.13"],\
           ["astro", "npm:5.14.1"],\
           ["daisyui", "npm:5.1.25"],\
@@ -5485,6 +5521,15 @@ const RAW_RUNTIME_STATE =
           "idb-keyval",\
           "ioredis",\
           "uploadthing"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["util-deprecate", [\
+      ["npm:1.0.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/util-deprecate-npm-1.0.2-e3fe1a219c-10c0.zip/node_modules/util-deprecate/",\
+        "packageDependencies": [\
+          ["util-deprecate", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\

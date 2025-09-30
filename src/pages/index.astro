@@ -9,6 +9,8 @@ import ChikunAvatar from '../assets/images/chikun_avatar.png';
 // Icons
 // @ts-ignore
 import SVGGithub from '../assets/icons/social/github.svg';
+// @ts-ignore
+import SVGDiscord from '../assets/icons/social/discord.svg';
 ---
 
 <html lang="en" data-theme="dracula">
@@ -20,34 +22,43 @@ import SVGGithub from '../assets/icons/social/github.svg';
 		<title>a bit of a Chikun - Andrew Reenan</title>
 	</head>
 	<body class="bg-linear-to-br from-base-100 to-base-300">
-		<div class="flex flex-col min-h-screen max-w-3xl mx-auto">
-			<header class="bg-base-300 h-35 p-4 pb-0 mb-0 mt-5 rounded-box rounded-b-none relative">
-				<div class="avatar float-right">
-					<div class="min-w-24 max-w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-						<Image src={ChikunAvatar} alt="Chikun Avatar"/>
+		<div class="flex flex-col w-8/12 mx-auto">
+			<header class="bg-base-300 md:h-35 p-4 pb-0 mb-0 mt-5 rounded-box rounded-b-none relative">
+				<div class="flex flex-col text-center md:absolute md:right-5 md:top-5">
+					<div class="avatar justify-center">
+						<div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+							<Image src={ChikunAvatar} alt="Chikun Avatar"/>
+						</div>
+					</div>
+					<div class="text-center mt-5">
+						<div class="badge badge-outline badge-accent">Socials</div>
+						<div class="mt-2">
+							<a href="https://discord.com/users/359850658310127627" target="_blank"><SVGDiscord class="fill-blue-500 w-8 inline mx-1"/></a>
+							<a href="https://github.com/looneychikun" target="_blank"><SVGGithub class="fill-neutral-content w-8 inline mx-1"/></a>
+						</div>
 					</div>
 				</div>
 				<div class="flex flex-col ml-3 mt-5">
-					<p class="text-4xl font-bold">Andrew Reenan</p>
-					<p class="text-sm italic text-neutral ml-45"> - a bit of a Chikun</p>
+					<p class="text-4xl font-bold text-center sm:text-left">Andrew Reenan</p>
+					<p class="text-sm italic text-neutral text-center sm:text-left sm:ml-45"> - a bit of a Chikun</p>
 				</div>
-				<div class="absolute bottom-0 w-full flex">
+				<div class="md:absolute md:bottom-0 w-full flex">
 					<div role="tablist" class="tabs tabs-lift">
 						<a role="tab" class="tab tab-active">Home</a>
 						<a role="tab" class="tab">About</a>
 						<a role="tab" class="tab">Blog</a>
 					</div>
-					<div class="flex-grow">
-						<div class="w-5 h-5">
-							<SVGGithub width="auto" height="auto" class="stroke-primary stroke-[0.5]"/>
-						</div>
-					</div>
 				</div>
 			</header>
-			<main class="flex-grow p-4 rounded-box border-l-1 border-l-base-300 rounded-t-none shadow-lg">
-				Content
+			<main class="flex flex-grow p-4 rounded-box border-l-1 border-l-base-300 rounded-t-none shadow-lg">
+					<div class="w-2/3 flex-1 prose">
+						<h3>Sup</h3>
+						<p>I suppose your wondering why you're here.</p>
+						<h1>Good Question</h1>
+					</div>
+				</div>
 			</main>
-			<footer class="p-4 mb-5 mt-4 mx-auto">
+			<footer class="p-4 mb-5 mt-4 mx-auto text-center">
 				<p class="text-neutral text-sm">&copy; 2025 Andrew Reenan</p>
 			</footer>
 		</div>
