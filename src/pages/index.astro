@@ -11,6 +11,8 @@ import ChikunAvatar from '../assets/images/chikun_avatar.png';
 import SVGGithub from '../assets/icons/social/github.svg';
 // @ts-ignore
 import SVGDiscord from '../assets/icons/social/discord.svg';
+import SVGEmail from '../assets/icons/social/email.svg';
+
 ---
 
 <html lang="en" data-theme="dracula">
@@ -23,7 +25,7 @@ import SVGDiscord from '../assets/icons/social/discord.svg';
 	</head>
 	<body class="bg-linear-to-br from-base-100 to-base-300 h-screen">
 		<div class="flex flex-col md:w-10/12 lg:w-8/12 mx-auto">
-			<header class="bg-base-300 lg:h-37 p-4 pb-0 mb-0 md:mt-5 md:rounded-box rounded-b-none relative">
+			<header class="bg-base-300 lg:h-37 p-4 pb-0 mb-0 md:mt-5 md:rounded-box md:rounded-b-none rounded-b-none relative">
 				<div class="flex flex-col text-center lg:absolute lg:right-5 lg:top-5">
 					<div class="avatar justify-center">
 						<div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -33,8 +35,9 @@ import SVGDiscord from '../assets/icons/social/discord.svg';
 					<div class="text-center mt-5">
 						<div class="badge badge-outline badge-accent">Socials</div>
 						<div class="mt-2">
-							<a href="https://discord.com/users/359850658310127627" target="_blank"><SVGDiscord class="fill-sky-500 w-8 inline mx-1"/></a>
-							<a href="https://github.com/looneychikun" target="_blank"><SVGGithub class="fill-neutral-content w-8 inline mx-1"/></a>
+							<div class="btn btn-circle btn-dash btn-neutral"><a href="https://discord.com/users/359850658310127627" target="_blank"><SVGDiscord class="fill-sky-500 w-8 inline mx-1"/></a></div>
+							<div class="btn btn-circle btn-dash btn-neutral"><a href="https://github.com/looneychikun" target="_blank"><SVGGithub class="fill-neutral-content w-8 inline mx-1"/></a></div>
+							<div class="btn btn-circle btn-dash btn-neutral"><a href="mailto:andrew@reenan.me" target="_blank"><SVGEmail class="fill-secondary w-8 inline mx-1"/></a></div>
 						</div>
 					</div>
 				</div>
