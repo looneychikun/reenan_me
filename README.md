@@ -6,3 +6,5 @@ Astro, TailwindCSS
 yarn install
 yarn run dev
 ```
+
+Built for extreme speed for absolutely no reason.
