@@ -21,13 +21,13 @@ import SVGDiscord from '../assets/icons/social/discord.svg';
 		<meta name="generator" content={Astro.generator} />
 		<title>a bit of a Chikun - Andrew Reenan</title>
 	</head>
-	<body class="bg-linear-to-br from-base-100 to-base-300">
+	<body class="bg-linear-to-br from-base-100 to-base-300 h-screen">
 		<div class="flex flex-col md:w-10/12 lg:w-8/12 mx-auto">
 			<header class="bg-base-300 lg:h-37 p-4 pb-0 mb-0 md:mt-5 md:rounded-box rounded-b-none relative">
 				<div class="flex flex-col text-center lg:absolute lg:right-5 lg:top-5">
 					<div class="avatar justify-center">
 						<div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-							<Image src={ChikunAvatar} alt="Chikun Avatar"/>
+							<Image src={ChikunAvatar} alt="Chikun Avatar" loading="eager"/>
 						</div>
 					</div>
 					<div class="text-center mt-5">
@@ -44,9 +44,9 @@ import SVGDiscord from '../assets/icons/social/discord.svg';
 				</div>
 				<div class="lg:absolute lg:bottom-0 lg:justify-start justify-center w-full flex mt-2">
 					<div role="tablist" class="tabs tabs-lift">
-						<a role="tab" class="tab tab-active">Home</a>
-						<a role="tab" class="tab">About</a>
-						<a role="tab" class="tab">Blog</a>
+						<a href="/#" role="tab" class="tab tab-active">Home</a>
+						<a href="/#" role="tab" class="tab">About</a>
+						<a href="/#" role="tab" class="tab">Blog</a>
 					</div>
 				</div>
 			</header>
@@ -54,7 +54,7 @@ import SVGDiscord from '../assets/icons/social/discord.svg';
 					<div class="w-2/3 flex-1 prose">
 						<h3>Sup</h3>
 						<p>I suppose your wondering why you're here.</p>
-						<h1><span class="">Good Question</span></h1>
+						<h1 class="gradient-text border-b-2 border-neutral" style="--from: #f3ec78; --to: #af4261;">Good Question</h1>
 					</div>
 				</div>
 			</main>
