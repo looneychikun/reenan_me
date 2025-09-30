@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.6.9",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.1",
@@ -16,6 +17,7 @@
     "sharp": "^0.34.4",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "wrangler": "^4.40.2"
   }
 }
