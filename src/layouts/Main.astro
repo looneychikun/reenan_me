@@ -23,9 +23,9 @@ import ChikunAvatar from '../assets/images/chikun_avatar.png';
 	</head>
 	<body class="bg-linear-to-br from-base-100 to-base-300 h-screen">
 		<div class="flex flex-col md:w-10/12 lg:w-8/12 mx-auto h-screen">
-			<header class="bg-base-300 md:h-37 p-4 pb-0 mb-0 md:mt-5 md:rounded-box md:rounded-b-none rounded-b-none relative">
+			<header class="bg-base-300 p-4 pb-0 mb-0 md:h-36 md:mt-5 md:rounded-box md:rounded-b-none rounded-b-none relative">
 				<!-- MARK: Avatar Card -->
-				<div class="flex flex-col text-center md:absolute md:right-5 md:top-5">
+				<div class="flex flex-col text-center md:float-right">
 					<div class="avatar justify-center">
 						<div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
 							<Image src={ChikunAvatar} alt="Chikun Avatar" loading="eager"/>
@@ -45,7 +45,7 @@ import ChikunAvatar from '../assets/images/chikun_avatar.png';
 					<p class="text-sm italic text-neutral text-center md:text-left md:ml-45"><span class="hidden md:inline">-</span> a bit of a Chikun</p>
 				</div>
 				<!-- MARK: Tabs -->
-				<div class="md:absolute md:bottom-0 md:justify-start justify-center w-full flex mt-2">
+				<div class="flex md:justify-start justify-center mt-2">
 					<Tabs />
 				</div>
 			</header>
