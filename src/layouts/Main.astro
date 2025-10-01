@@ -4,11 +4,14 @@ import '../styles/global.css'
 // Components
 import SocialButton from '../components/SocialButton.astro';
 import Tabs from '../components/Tabs.astro';
+import DarkModeManager from '../components/DarkModeManager.astro';
+
 
 
 // Images
 import { Image } from 'astro:assets';
 import ChikunAvatar from '../assets/images/chikun_avatar.png';
+import ChikunBeach from '../assets/images/chikun_beach.png';
 
 ---
 
@@ -19,18 +22,31 @@ import ChikunAvatar from '../assets/images/chikun_avatar.png';
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
+		<!-- Handle lightmode early to prevent flashing -->
+		<script is:inline>
+			if (localStorage.getItem('theme') === 'light') {
+				document.documentElement.dataset.theme = 'bumblebee'
+			}
+		</script>
 		<title>a bit of a Chikun - Andrew Reenan</title>
 	</head>
 	<body class="bg-linear-to-br from-base-100 to-base-300 h-display">
 		<div class="md:w-10/12 lg:w-8/12 max-w-[1270px] mx-auto h-screen">
 			<header class="bg-base-300 p-4 pb-0 mb-0 md:h-36 md:mt-5 md:rounded-box md:rounded-b-none rounded-b-none">
 				<!-- MARK: Avatar Card -->
-				<div class="text-center md:float-right">
-					<div class="avatar">
+				<div class="text-center md:float-right relative">
+					<DarkModeManager />
+					<div class="avatar light:hidden dark:inline-block">
 						<div class="w-60 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
 							<Image src={ChikunAvatar} alt="Chikun Avatar" loading="eager"/>
 						</div>
 					</div>
+					<div class="avatar dark:hidden light:inline-block">
+						<div class="w-60 rounded-full ring ring-sky-500 ring-offset-base-100 ring-offset-2">
+							<Image src={ChikunBeach} alt="Chikun Avatar" loading="eager"/>
+						</div>
+					</div>
+
 					<div class="mt-3">
 						<span class="badge badge-outline badge-accent">Socials</span>
 						<div class="mt-2 flex flex-cols-3 gap-2 justify-center">

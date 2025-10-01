@@ -1,0 +1,30 @@
+---
+// Icons
+import SvgSun from '../assets/icons/sun.svg';
+import SvgMoon from '../assets/icons/moon.svg';
+---
+
+<script>
+  const light = document.getElementById('light') as HTMLInputElement;
+  if (document.documentElement.dataset.theme === 'bumblebee') {
+    light.checked = true;
+  }
+
+  document.getElementById('light').addEventListener ('change', (e) => {
+    if (e.target instanceof HTMLInputElement && e.target.checked) {
+      localStorage.setItem('theme', 'light');
+      document.documentElement.dataset.theme = 'bumblebee';
+    } else {
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.dataset.theme = 'dracula';
+    }
+
+    //document.querySelectorAll('.avatar').forEach((avatar) => avatar.classList.toggle('hidden') )
+  });
+</script>
+
+<label class="swap swap-rotate absolute md:top-0 md:left-0 z-1" aria-label="Dark Mode">
+  <input id="light" type="checkbox" />
+  <SvgSun class="swap-on h-7 w-7 fill-current" />
+  <SvgMoon class="swap-off h-7 w-7 fill-secondary" />
+</label>

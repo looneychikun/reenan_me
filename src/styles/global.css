@@ -2,5 +2,7 @@
 
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-  themes: dracula;
+  themes: dracula --default, bumblebee;
 }
+
+@custom-variant light (&:where([data-theme='bumblebee'], [data-theme='bumblebee'] *));
