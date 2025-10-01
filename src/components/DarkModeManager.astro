@@ -11,7 +11,9 @@ import SvgMoon from '../assets/icons/moon.svg';
   }
 
   light.addEventListener ('change', (e) => {
-    if (e.target instanceof HTMLInputElement && e.target.checked) {
+    if (!(e.target instanceof HTMLInputElement)) return;
+    
+    if (e.target.checked) {
       localStorage.setItem('theme', 'light');
       document.documentElement.dataset.theme = 'bumblebee';
     } else {
