@@ -6,6 +6,14 @@
     {
       "pattern": "reenan.me",
       "custom_domain": true
+    },
+    {
+      "pattern": "andrew.reenan.me",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.reenan.me",
+      "custom_domain": true
     }
   ],
   "assets": {
