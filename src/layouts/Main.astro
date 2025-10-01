@@ -2,16 +2,8 @@
 import '../styles/global.css'
 
 // Components
-import SocialButton from '../components/SocialButton.astro';
+import HeroCard from '../components/HeroCard.astro';
 import Tabs from '../components/Tabs.astro';
-import DarkModeManager from '../components/DarkModeManager.astro';
-
-
-
-// Images
-import { Image } from 'astro:assets';
-import ChikunAvatar from '../assets/images/chikun_avatar.png';
-import ChikunBeach from '../assets/images/chikun_beach.png';
 
 ---
 
@@ -33,29 +25,7 @@ import ChikunBeach from '../assets/images/chikun_beach.png';
 	<body class="bg-linear-to-br from-base-100 to-base-300 h-display">
 		<div class="md:w-10/12 lg:w-8/12 max-w-[1270px] mx-auto h-screen">
 			<header class="bg-base-300 p-4 pb-0 mb-0 md:h-36 md:mt-5 md:rounded-box md:rounded-b-none rounded-b-none">
-				<!-- MARK: Avatar Card -->
-				<div class="text-center md:float-right relative">
-					<DarkModeManager />
-					<div class="avatar light:hidden inline-block">
-						<div class="w-60 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-							<Image src={ChikunAvatar} alt="Chikun Avatar" loading="eager"/>
-						</div>
-					</div>
-					<div class="avatar hidden light:inline-block">
-						<div class="w-60 rounded-full ring ring-sky-500 ring-offset-base-100 ring-offset-2">
-							<Image src={ChikunBeach} alt="Chikun Avatar" loading="eager"/>
-						</div>
-					</div>
-
-					<div class="mt-3">
-						<span class="badge badge-outline badge-accent">Socials</span>
-						<div class="mt-2 flex flex-cols-3 gap-2 justify-center">
-							<SocialButton icon="Discord" url="https://discord.com/users/359850658310127627" fill="fill-sky-500"/>
-							<SocialButton icon="Github" url="https://github.com/looneychikun" fill="fill-current light:fill-accent"/>
-							<SocialButton icon="Email" url="mailto:andrew@reenan.me" fill="fill-secondary"/>
-						</div>
-					</div>
-				</div>
+				<HeroCard />
 				<div class="ml-3 mt-5">
 					<p class="text-4xl font-bold text-center text-base-content md:text-left">Andrew Reenan</p>
 					<p class="text-sm italic text-neutral text-center md:text-left md:ml-45"><span class="hidden md:inline">-</span> a bit of a Chikun</p>
