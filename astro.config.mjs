@@ -16,10 +16,6 @@ export default defineConfig({
       tailwindcss()
     ],
   },
-
-  adapter: cloudflare({
-    imageService: 'compile'
-  }),
-
+  
   integrations: [sitemap()],
 });
