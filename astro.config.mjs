@@ -8,8 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://reenan.me/',
-  trailingSlash: 'always',
+  site: 'https://reenan.me',
 
   vite: {
     plugins: [
