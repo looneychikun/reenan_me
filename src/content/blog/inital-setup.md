@@ -8,7 +8,9 @@ author: Andrew Reenan
 collection: Development
 ---
 
-# Setting up the Blog
+<h1 class="bg-linear-to-l from-accent to-primary bg-clip-text text-transparent">
+  Setting up the Blog
+</h1>
 
 Before actually doing any writing, I had to create the thing.
 
@@ -22,7 +24,7 @@ Ok, lets try `<this>` and \<that>
 
 What happens if I try to add a card here?
 
-<div class="no-prose flex justify-center">
+<div class="flex justify-center">
   <div class="card bg-base-200 w-96 shadow-sm">
     <figure class="mt-0">
       <img
@@ -39,7 +41,15 @@ What happens if I try to add a card here?
   </div>
 </div>
 
-Seems to work.
+Or color a <span class="text-warning">specific</span> word?
+
+Seems to <span class="text-primary">work</span>.
+
+How about an unordered list?
+
+- <span class="text-blue-500">What does this look like</span>
+  - Second level?
+- Back to first
 
 I'll need to figure out something about the hero div screwing up the idea of centering.
 
