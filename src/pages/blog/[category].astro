@@ -1,0 +1,45 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+
+interface Props {
+  posts:  CollectionEntry<'blog'>[],
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const categories = [...new Set(posts.map(post => post.data.collection))].flat();
+
+  return categories.map(category => ({
+    params: { category: category, },
+    props: { posts: posts.filter(post => post.data.collection === category) }
+  }));
+};
+
+import MainLayout from '../../layouts/Main.astro';
+
+const { category } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+</style>
+
+<MainLayout>
+  <div class="breadcrumbs text-sm pb-0 pt-4">
+    <ul>
+      <li><span class="badge badge-secondary"><a href="/blog/">Blog</a></span></li>
+      <li><span class="badge badge-primary">{category}</span></li>
+    </ul>
+  </div>
+  <h1 class="text-5xl bg-linear-to-br from-accent to-primary bg-clip-text text-transparent pt-8 pb-7">
+    Category: {category}
+  </h1>
+  <div class="prose">
+    <ul>
+      { posts.filter(post => post.data.collection === category).map(post => (
+        <li><a href={`/blog/posts/${post.id}`}>{post.data.title}</a> - {post.id}</li>
+      ))}
+    </ul>
+  </div>
+</MainLayout>
