@@ -2,8 +2,8 @@
 import MainLayout from '../layouts/Main.astro'
 ---
 <MainLayout>
-	<div class="prose pt-8">
-    <h1 class="bg-linear-to-l from-accent to-primary bg-clip-text text-transparent">
+	<div class="prose pt-8 md:max-w-100 lg:max-w-xl xl:max-w-3xl">
+    <h1 class="glow from-secondary to-primary">
       What is this?
     </h1>
     <p>
@@ -16,3 +16,11 @@ import MainLayout from '../layouts/Main.astro'
     </p>
 	</div>
 </MainLayout>
+
+<style>
+  h1.glow {
+    background-image: linear-gradient(to right, var(--tw-gradient-from, var(--text-base-content)), var(--tw-gradient-to, var(--color-base-content)));
+    background-clip: text;
+    color: transparent;
+  }
+</style>

@@ -1,12 +1,7 @@
 ---
 import MainLayout from '../layouts/Main.astro'
+
+const hideMain = true;
 ---
-<MainLayout>
-	<div class="prose pt-8">
-		<h3>Sup</h3>
-		<p>I suppose your wondering why you're here.</p>
-		<h1 class="bg-linear-to-br from-accent light:from-info to-primary light:to-accent bg-clip-text text-transparent">
-			Good Question
-		</h1>
-	</div>
+<MainLayout hideMain={hideMain} />
 </MainLayout>

@@ -7,9 +7,9 @@ import ChikunAvatar from '../assets/images/chikun_avatar.png';
 import ChikunBeach from '../assets/images/chikun_beach.png';
 ---
 
-<div class="text-center md:float-right relative">
+<div class="relative ml-auto mr-auto md:mr-0">
   <DarkModeManager />
-  <div class="avatar light:hidden inline-block">
+  <div class="avatar light:hidden">
     <div class="w-60 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
       <Image src={ChikunAvatar} alt="Chikun Avatar" loading="eager"/>
     </div>
@@ -20,8 +20,10 @@ import ChikunBeach from '../assets/images/chikun_beach.png';
     </div>
   </div>
 
-  <div class="mt-3">
-    <span class="badge badge-outline badge-accent">Socials</span>
+  <div class="flex flex-wrap justify-center text-center mt-3">
+    <div class="basis-full">
+      <span class="badge badge-outline badge-accent">Socials</span>
+    </div>
     <div class="mt-2 flex flex-cols-3 gap-2 justify-center">
       <SocialButton icon="Discord" url="https://discord.com/users/359850658310127627" fill="fill-sky-500"/>
       <SocialButton icon="Github" url="https://github.com/looneychikun" fill="fill-current light:fill-accent"/>

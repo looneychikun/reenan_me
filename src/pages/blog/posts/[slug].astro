@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 import MainLayout from '../../../layouts/Main.astro';
 const { post } = Astro.props;
 
-const { Content, headings } = await render(post);
+const { Content } = await render(post);
 ---
 
 <MainLayout>
