@@ -6,3 +6,9 @@
 }
 
 @custom-variant light (&:where([data-theme='bumblebee'], [data-theme='bumblebee'] *));
+
+@utility glow {
+  background-image: linear-gradient(to right, var(--tw-gradient-from, var(--text-base-content)), var(--tw-gradient-to, var(--color-base-content)));
+  background-clip: text;
+  color: transparent;
+}
