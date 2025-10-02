@@ -7,6 +7,7 @@ pubDate: 2025-10-01
 author: Andrew Reenan
 collection: Development
 ---
+import { Image } from 'astro:assets';
 
 <h1 class="bg-linear-to-l from-accent to-primary bg-clip-text text-transparent">
   Setting up the Blog
@@ -27,9 +28,11 @@ What happens if I try to add a card here?
 <div class="flex justify-center">
   <div class="card bg-base-200 w-96 shadow-sm">
     <figure class="mt-0">
-      <img
+      <Image
         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Shoes" />
+        width="928"
+        height="548"
+        alt="Shoes" loading="eager" />
     </figure>
     <div class="card-body">
       <h2 class="card-title">Card Title</h2>

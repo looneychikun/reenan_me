@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://reenan.me',
@@ -15,5 +17,5 @@ export default defineConfig({
     ],
   },
 
-  integrations: [ sitemap() ],
+  integrations: [sitemap(), mdx()],
 });
