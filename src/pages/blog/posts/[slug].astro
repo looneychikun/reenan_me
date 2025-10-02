@@ -1,0 +1,36 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  return posts.map(post => ({
+    params: { slug: post.id, },
+    props: { post: post },
+  }));
+}
+
+import MainLayout from '../../../layouts/Main.astro';
+const { post } = Astro.props;
+
+const { Content, headings } = await render(post);
+---
+
+<MainLayout>
+  <div class="breadcrumbs text-sm pb-8 pt-4">
+    <ul>
+      <li><span class="badge badge-secondary"><a href="/blog/">Blog</a></span></li>
+      <li><span class="badge badge-secondary"><a>{post.data.collection}</a></span></li>
+      <li><span class="badge badge-primary">Inital Setup</span></li>
+    </ul>
+  </div>
+    <div class="prose w-full
+      prose-a:text-accent
+      ">
+      <Content />
+  </div>
+</MainLayout>
