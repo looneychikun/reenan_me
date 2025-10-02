@@ -20,6 +20,15 @@
     "not_found_handling": "404-page",
     "directory": "./dist"
   },
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "748a092bde344c73bb5ca48146bd3024"
+      
+      // Optional: preview_id used when running `wrangler dev` for local dev
+      // "preview_id": "<ID_OF_PREVIEW_KV_NAMESPACE_FOR_LOCAL_DEVELOPMENT>"
+    }
+  ],
   "observability": {
     "enabled": true
   }
