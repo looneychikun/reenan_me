@@ -1,7 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "reenan-me",
+  "main": ".dist/_worker.js/index.js",
   "compatibility_date": "2025-09-29",
+  "compatibility_flags": ["nodejs_compat"],
   "routes": [
     {
       "pattern": "reenan.me",
@@ -17,7 +19,7 @@
     }
   ],
   "assets": {
-    "not_found_handling": "404-page",
+    "binding": "ASSETS",
     "directory": "./dist"
   },
   "kv_namespaces": [
