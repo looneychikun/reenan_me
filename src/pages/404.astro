@@ -1,12 +1,13 @@
 ---
-import MainLayout from '../layouts/Main.astro'
+import BusinessCardLayout from '../layouts/BusinessCardLayout.astro'
+import { TabPage } from '../enums/TabPage';
 ---
 
-<MainLayout>
+<BusinessCardLayout activeTab={TabPage.None}>
 	<div class="pt-8">
     <h1 class="bg-linear-to-br from-error to-accent bg-clip-text text-transparent text-center text-5xl pb-2">
       ???<br />
     </h1>
     <p class="text-neutral light:text-neutral-content text-small text-center">404</p>
 	</div>
-</MainLayout>
+</BusinessCardLayout>

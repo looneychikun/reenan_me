@@ -1,6 +1,4 @@
 ---
-import MainLayout from '../../layouts/Main.astro';
-
 import { getCollection } from 'astro:content';
 const posts = await getCollection('blog')
 ---
@@ -9,8 +7,8 @@ const posts = await getCollection('blog')
     @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
 </style>
 
-<MainLayout initSize="20">
-  <h1 class="font-[Rouge_Script] text-6xl xl:text-8xl bg-linear-to-br from-accent to-primary bg-clip-text text-transparent text-center pt-8 pb-7">
+<blog-home>
+    <h1 class="font-[Rouge_Script] text-6xl xl:text-8xl bg-linear-to-br from-accent to-primary bg-clip-text text-transparent text-center pt-8 pb-7">
     a Taste of Chikun
   </h1>
   <div class="prose">
@@ -26,4 +24,4 @@ const posts = await getCollection('blog')
       ))}
     </ul>
   </div>
-</MainLayout>
+</blog-home>

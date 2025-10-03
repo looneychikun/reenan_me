@@ -1,13 +1,18 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { TabPage } from '../enums/TabPage';
 
 import '../styles/global.css'
+
+interface Props {
+	activeTab: TabPage
+}
 
 // Components
 import HeroCard from '../components/HeroCard.astro';
 import Tabs from '../components/Tabs.astro';
 
-const { startOpen = true, initSize } = Astro.props;
+const { activeTab } = Astro.props;
 ---
 
 <html lang="en" data-theme="dracula" class="bg-linear-to-br from-base-100 to-base-300 bg-fixed bg-no-repeat">
@@ -19,11 +24,7 @@ const { startOpen = true, initSize } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<!-- Handle lightmode early to prevent flashing -->
-		<script is:inline>
-			if (localStorage.getItem('theme') === 'light') {
-				document.documentElement.dataset.theme = 'bumblebee'
-			}
-		</script>
+		 <slot name="head">
 		<title>a bit of a Chikun - Andrew Reenan</title>
 	</head>
 	<body>
@@ -35,15 +36,13 @@ const { startOpen = true, initSize } = Astro.props;
 						<p class="text-4xl font-bold text-center text-base-content md:text-left">Andrew Reenan</p>
 						<p class="text-sm italic text-neutral text-center md:text-left md:ml-45"><span class="hidden md:inline">-</span> a bit of a Chikun</p>
 						<div class="flex md:justify-start justify-center mt-2">
-							<Tabs />
+							<Tabs activeTab={activeTab} />
 						</div>
 					</div>
 				</div>
 			</header>
-			<main id="main"class="bg-base-100 md:bg-base-100 md:rounded-box md:border-l-1 md:border-base-300 rounded-t-none md:rounded-t-none md:shadow-lg md:min-h-58">
-				<div id="shelf" class={ startOpen ? 'open' : 'closed' }>
-					<slot />
-				</div>
+			<main id="main" class="bg-base-100 md:bg-base-100 md:rounded-box md:border-l-1 md:border-base-300 rounded-t-none md:rounded-t-none md:shadow-lg md:min-h-58">
+				<slot />
 			</main>
 			<footer class="p-4 mb-5 mt-0 mx-auto text-center">
 				<p class="text-neutral text-sm">&copy; 2025 Andrew Reenan - <a class="underline" href="https://github.com/looneychikun/reenan_me" target="_blank">Source</a></p>
@@ -53,30 +52,34 @@ const { startOpen = true, initSize } = Astro.props;
 </html>
 
 <script>
-	const toggleHide = (tab: string) => {
-		document.getElementById('shelf')?.classList.toggle('open');
-		document.getElementById('shelf')?.classList.toggle('closed');
-		document.getElementById(tab)?.classList.toggle('tab-active');
-	};
-	const aboutHide = () => toggleHide('tabAbout');
-	const blogHide = () => toggleHide('tabBlog'); 
+	// let shelf : HTMLDivElement;
 
-	document.addEventListener('astro:page-load', (e) => {
-		document.getElementById('tabAbout')?.addEventListener('click', aboutHide);
-		document.getElementById('tabBlog')?.addEventListener('click', blogHide);
-	});
+	// const toggleHide = (tab: string) => {
+	// 	shelf.classList.toggle('open');
+	// 	document.getElementById(tab)?.classList.toggle('tab-active');
+	// };
+	// const aboutHide = () => toggleHide('tabAbout');
+	// const blogHide = () => toggleHide('tabBlog'); 
+
+	// document.addEventListener('astro:page-load', (e) => {
+	// 	shelf = document.getElementById('shelf') as HTMLDivElement;
+	// 	document.getElementById('tabAbout')?.addEventListener('click', aboutHide);
+	// 	document.getElementById('tabBlog')?.addEventListener('click', blogHide);
+	// 	shelf.style.maxHeight = shelf.scrollHeight.toString() + 'px';
+	// });
 </script>
 
 <style>
-#shelf.closed {
-	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+.shelf {
+	transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 	opacity: 0;
 	overflow: hidden;
-	height: 0;
+	min-height: 0;
+	max-height: 0;
 }
-#shelf.open {
-	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-	height: 25em;
+.shelf.open {
+	transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	max-height: 1000px;
 	overflow: visible;
 	opacity: 1;
 }

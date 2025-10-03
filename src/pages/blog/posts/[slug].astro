@@ -14,13 +14,14 @@ export async function getStaticPaths() {
   }));
 }
 
-import MainLayout from '../../../layouts/Main.astro';
+import BusinessCardLayout from '../../../layouts/BusinessCardLayout.astro';
+import { TabPage } from '../../../enums/TabPage';
 const { post } = Astro.props;
 
 const { Content } = await render(post);
 ---
 
-<MainLayout>
+<BusinessCardLayout activeTab={TabPage.Blog}>
   <div class="breadcrumbs text-sm pb-8 pt-4">
     <ul>
       <li><span class="badge badge-secondary"><a href="/blog/">Blog</a></span></li>
@@ -33,4 +34,4 @@ const { Content } = await render(post);
       ">
       <Content />
   </div>
-</MainLayout>
+</BusinessCardLayout>

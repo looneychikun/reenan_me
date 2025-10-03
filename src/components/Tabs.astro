@@ -1,13 +1,52 @@
 ---
-const path = Astro.url.pathname;
-const about = path.startsWith('/about');
-const blog = path.startsWith('/blog');
+import { TabPage } from '../enums/TabPage';
+
+interface Props {
+  activeTab: TabPage
+}
+
+const { activeTab } = Astro.props;
+
 ---
 
-<div role="tablist" class="tabs tabs-lift">
-  <!-- on your own page you are a rollup link -->
-  { !about && <a id="tabAbout" href="/about" role="tab" class="tab">About</a> }
-  { about && <a id="tabAbout" role="tab" class="tab tab-active">About</a> }
-  { !blog && <a id="tabBlog" href="/blog" role="tab" class="tab">Blog</a> }
-  { blog && <a id="tabBlog" role="tab" class="tab tab-active">Blog</a> }
-</div>
+<script>
+  import { TabPage } from "../enums/TabPage"
+
+  let activeTab : string;
+
+  class TabNav extends HTMLElement {
+    connectedCallback() {
+      activeTab = this.dataset.activeTab as string;
+
+      // expand the tab we're on
+      this.querySelectorAll('a').forEach((e) => {
+        if (e.dataset.toggle as string === activeTab) e.classList.add('tab-active');
+      });
+      if (activeTab != TabPage.None.toString()) 
+        ((document.getElementById(activeTab.toString()) as HTMLInputElement).parentElement as HTMLDivElement)
+        .classList.add('collapse-open');
+      
+      // Hijack navigation and simulate single page app
+      this.querySelectorAll('a').forEach((n) => {
+        n.addEventListener('click', (e) => {
+          if (!(e.target instanceof HTMLAnchorElement)) return;
+            e.preventDefault();
+            const content = document.getElementById(e.target.dataset.toggle as string) as HTMLInputElement;
+            content.parentElement?.classList.remove('collapse-open');
+            content.checked = !content.checked;
+            this.querySelectorAll('a').forEach((n) => n.classList.remove('tab-active'));
+            if (content.checked) e.target.classList.add('tab-active');
+        });
+      });
+    };
+  };
+  customElements.define('tab-nav', TabNav)
+</script>
+
+<tab-nav data-active-tab={activeTab}>
+  <div role="tablist" class="tabs tabs-lift">
+    <!-- on your own page you are a rollup link -->
+    <a href="/about" data-toggle={TabPage.About} role="tab" class="tab">About</a>
+    <a href="/blog" data-toggle={TabPage.Blog} role="tab" class="tab">Blog</a> 
+  </div>
+</tab-nav>

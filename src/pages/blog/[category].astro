@@ -15,7 +15,8 @@ export async function getStaticPaths() {
   }));
 };
 
-import MainLayout from '../../layouts/Main.astro';
+import BusinessCardLayout from '../../layouts/BusinessCardLayout.astro';
+import { TabPage } from '../../enums/TabPage';
 
 const { category } = Astro.params;
 const { posts } = Astro.props;
@@ -25,7 +26,7 @@ const { posts } = Astro.props;
     @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
 </style>
 
-<MainLayout>
+<BusinessCardLayout activeTab={TabPage.Blog}>
   <div class="breadcrumbs text-sm pb-0 pt-4">
     <ul>
       <li><span class="badge badge-secondary"><a href="/blog/">Blog</a></span></li>
@@ -42,4 +43,4 @@ const { posts } = Astro.props;
       ))}
     </ul>
   </div>
-</MainLayout>
+</BusinessCardLayout>

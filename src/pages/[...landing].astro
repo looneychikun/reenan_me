@@ -1,0 +1,31 @@
+---
+import BusinessCardLayout from '../layouts/BusinessCardLayout.astro';
+import { TabPage } from '../enums/TabPage';
+
+import AboutPage from '../content/about.md';
+import BlogList from '../components/BlogList.astro';
+
+export async function getStaticPaths() {
+	return [
+		{ params: { landing: undefined }, props: { 'active': TabPage.None }},
+		{ params: { landing: 'about' }, props: { 'active': TabPage.About }},
+		{ params: { landing: 'blog' }, props: { 'active' : TabPage.Blog }}
+	]
+}
+
+const { active } = Astro.props;
+---
+<BusinessCardLayout activeTab={active}>
+	<div class="collapse">
+		<input id={TabPage.About.toString()} type="radio" class="absolute" name="tabselect" />
+		<div class="collapse-content">
+			<AboutPage />
+		</div>
+	</div>
+	<div class="collapse">
+		<input id={TabPage.Blog.toString()} type="radio" class="absolute" name="tabselect" />
+		<div class="collapse-content">
+			<BlogList />
+		</div>
+	</div>
+</BusinessCardLayout>
