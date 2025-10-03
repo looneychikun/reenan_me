@@ -12,10 +12,14 @@ import AboutPage from '../content/about.md';
 </MainLayout>
 
 <script>
-document.getElementById('tabAbout')?.addEventListener('click', () => {
-	document.getElementById('shelf')?.classList.toggle('active');
-	document.getElementById('tabAbout')?.classList.toggle('tab-active');
-});
+	const toggleHide = () => {
+		document.getElementById('shelf')?.classList.toggle('active');
+		document.getElementById('tabAbout')?.classList.toggle('tab-active');
+	};
+
+	document.addEventListener('astro:page-load', (e) => {
+		document.getElementById('tabAbout')?.addEventListener('click', toggleHide);
+	});
 </script>
 
 <style>

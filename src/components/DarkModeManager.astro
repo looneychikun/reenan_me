@@ -5,12 +5,12 @@ import SvgMoon from '../assets/icons/moon.svg';
 ---
 
 <script>
-  const light = document.getElementById('light') as HTMLInputElement;
+  let light = document.getElementById('light') as HTMLInputElement;
   if (document.documentElement.dataset.theme === 'bumblebee') {
     light.checked = true;
   }
 
-  light.addEventListener ('change', (e) => {
+  const toggleDarkMode = (e: Event) => {
     if (!(e.target instanceof HTMLInputElement)) return;
     
     if (e.target.checked) {
@@ -20,11 +20,25 @@ import SvgMoon from '../assets/icons/moon.svg';
       localStorage.setItem('theme', 'dark');
       document.documentElement.dataset.theme = 'dracula';
     }
+  };
+  light.addEventListener('change', toggleDarkMode);
+
+  // Re-initialize dark mode on client navigation
+  document.addEventListener('astro:before-swap', (event) => {
+    light = event.newDocument.getElementById('light') as HTMLInputElement;
+
+    light.addEventListener('change', toggleDarkMode);
+    if (localStorage.getItem('theme') === 'light') {
+      light.checked = true;
+      event.newDocument.documentElement.dataset.theme = 'bumblebee';
+    }
   });
 </script>
 
-<label class="swap swap-rotate absolute md:top-0 md:left-0 z-1" aria-label="Dark Mode">
-  <input id="light" type="checkbox" />
-  <SvgSun class="swap-on h-7 w-7 fill-current" />
-  <SvgMoon class="swap-off h-7 w-7 fill-neutral" />
-</label>
+<dark-mode-manager>
+  <label class="swap swap-rotate absolute md:top-0 md:left-0 z-1" aria-label="Dark Mode">
+    <input id="light" type="checkbox" />
+    <SvgSun class="swap-on h-7 w-7 fill-current" />
+    <SvgMoon class="swap-off h-7 w-7 fill-neutral" />
+  </label>
+</dark-mode-manager>

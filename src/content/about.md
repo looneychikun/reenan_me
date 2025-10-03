@@ -5,7 +5,7 @@
 
 My digital business card.
 
-You can use the links above to get in touch with me.
+You can use the links <span class="inline md:hidden">above</span><span class="hidden md:inline">to the right</span> to get in touch with me.
 
 
 </div>

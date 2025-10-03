@@ -1,12 +1,13 @@
 ---
 const path = Astro.url.pathname;
+const about = path.startsWith('/about');
+const blog = path.startsWith('/blog');
 ---
 
 <div role="tablist" class="tabs tabs-lift">
-  {  path.startsWith('/blog') ? 
-  <a id="tabAbout" href="/about" role="tab" class="tab">About</a> :
-  <a id="tabAbout" role="tab" class:list={['tab', { 'tab-active': path.startsWith('/about') }]}>About</a>
-  }
-  <!--  -->
-  <a href="/blog" role="tab" class:list={['tab', { 'tab-active': path.startsWith('/blog') }]}>Blog</a>
+  <!-- on your own page you are a rollup link -->
+  { !about && <a id="tabAbout" href="/about" role="tab" class="tab">About</a> }
+  { about && <a id="tabAbout" role="tab" class="tab tab-active">About</a> }
+  { !blog && <a id="tabBlog" href="/blog" role="tab" class="tab">Blog</a> }
+  { blog && <a id="tabBlog" role="tab" class="tab tab-active">Blog</a> }
 </div>

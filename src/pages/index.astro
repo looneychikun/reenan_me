@@ -3,32 +3,8 @@ import MainLayout from '../layouts/Main.astro';
 
 import AboutPage from '../content/about.md';
 
-
+const startOpen: boolean = false;
 ---
-<MainLayout>
-	<div id="shelf">
+<MainLayout startOpen={false}>
 		<AboutPage />
-	</div>
 </MainLayout>
-
-<script>
-document.getElementById('tabAbout')?.addEventListener('click', () => {
-	document.getElementById('shelf')?.classList.toggle('active');
-	document.getElementById('tabAbout')?.classList.toggle('tab-active');
-});
-</script>
-
-<style>
-#shelf {
-	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-	opacity: 0;
-	overflow: hidden;
-	height: 0;
-}
-#shelf.active {
-	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-	height: 15em;
-	overflow: visible;
-	opacity: 1;
-}
-</style>
