@@ -7,7 +7,7 @@ import '../styles/global.css'
 import HeroCard from '../components/HeroCard.astro';
 import Tabs from '../components/Tabs.astro';
 
-const { startOpen = true } = Astro.props;
+const { startOpen = true, initSize } = Astro.props;
 ---
 
 <html lang="en" data-theme="dracula" class="bg-linear-to-br from-base-100 to-base-300 bg-fixed bg-no-repeat">
@@ -76,7 +76,7 @@ const { startOpen = true } = Astro.props;
 }
 #shelf.open {
 	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-	height: 15em;
+	height: 25em;
 	overflow: visible;
 	opacity: 1;
 }

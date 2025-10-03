@@ -5,33 +5,6 @@ import AboutPage from '../content/about.md';
 
 
 ---
-<MainLayout>
-	<div id="shelf">
-		<AboutPage />
-	</div>
+<MainLayout initSize="20">
+  <AboutPage />
 </MainLayout>
-
-<script>
-	const toggleHide = () => {
-		document.getElementById('shelf')?.classList.toggle('active');
-		document.getElementById('tabAbout')?.classList.toggle('tab-active');
-	};
-
-	document.addEventListener('astro:page-load', (e) => {
-		document.getElementById('tabAbout')?.addEventListener('click', toggleHide);
-	});
-</script>
-
-<style>
-#shelf {
-	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-	opacity: 1;
-	overflow: hidden;
-	height: 15em;
-
-}
-#shelf.active {
-	height: 0em;
-	opacity: 0;
-}
-</style>
