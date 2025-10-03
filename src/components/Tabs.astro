@@ -3,9 +3,9 @@ const path = Astro.url.pathname;
 ---
 
 <div role="tablist" class="tabs tabs-lift">
-  {  path === '/' ? 
-  <a id="tabAbout" role="tab" class="tab">About</a> :
-  <a id="tabAbout" href="/about" role="tab" class:list={['tab', { 'tab-active': path.startsWith('/about') }]}>About</a>
+  {  path.startsWith('/blog') ? 
+  <a id="tabAbout" href="/about" role="tab" class="tab">About</a> :
+  <a id="tabAbout" role="tab" class:list={['tab', { 'tab-active': path.startsWith('/about') }]}>About</a>
   }
   <!--  -->
   <a href="/blog" role="tab" class:list={['tab', { 'tab-active': path.startsWith('/blog') }]}>Blog</a>

@@ -1,8 +1,32 @@
 ---
 import MainLayout from '../layouts/Main.astro';
 
-import { Content } from '../content/about.md';
+import AboutPage from '../content/about.md';
+
+
 ---
 <MainLayout>
-  <Content />
+	<div id="shelf">
+		<AboutPage />
+	</div>
 </MainLayout>
+
+<script>
+document.getElementById('tabAbout')?.addEventListener('click', () => {
+	document.getElementById('shelf')?.classList.toggle('active');
+	document.getElementById('tabAbout')?.classList.toggle('tab-active');
+});
+</script>
+
+<style>
+#shelf {
+	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	opacity: 1;
+	overflow: hidden;
+	height: 20em;
+}
+#shelf.active {
+	height: 0;
+	opacity: 0;
+}
+</style>
