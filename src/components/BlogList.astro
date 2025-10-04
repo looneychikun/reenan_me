@@ -8,25 +8,30 @@ const images = import.meta.glob(`../content/blog/img/*.{jpg,jpeg,png,gif}`);
 ---
 
 <blog-home>
-  <ul class="[&>*:nth-child(even)]:bg-base-200 shadow-md flex">
-    { posts.map(post => 
-      <li class="list-row">
-        <div class="">
-          <div>
-            <a href={`/blog/posts/${post.id}`}>
-              <Image 
-                src={images[`../content/blog/img/${post.data.image}`]().then()} 
-                alt={post.data.title} loading="lazy" class="size-50 rounded-box"
-              />
-            </a>
+  <div class="w-3/4 p-4 pt-8">
+    <h1 class="text-5xl bg-linear-to-br from-primary to-accent bg-clip-text text-transparent"><strong>Recent Posts</strong></h1>
+  </div>
+    <ul class="list [&>*:nth-child(even)]:bg-base-200 shadow-md">
+      { posts.map(post => 
+        <li class="list-row">
+          <div class="card lg:card-side">
+            <figure class="lg:max-w-1/2">
+              <a href={`/blog/posts/${post.id}`}>
+                <Image 
+                  src={images[`../content/blog/img/${post.data.image}`]().then()} 
+                  alt={post.data.title} loading="lazy" class="rounded-box"
+                />
+              </a>
+            </figure>
+            <div class="card-body">
+              <div class="pt-4 pr-4">
+                <h1 class="text-2xl lg:text-4xl text-accent"><a href={`/blog/posts/${post.id}`}>{post.data.title}</a></h1>
+                <p>{post.data.description}</p>
+              </div>
+            </div>
           </div>
-          <div class="divider divider-horizontal"></div>
-          <div class="pt-4 pr-4">
-            <h1 class="text-2xl lg:text-4xl text-accent">{post.data.title}</h1>
-            <p>{post.data.description}</p>
-          </div>
-        </div>
-      </li>
-    )}
-  </ul>
+        </li>
+      )}
+    </ul>
+  </div>
 </blog-home>
