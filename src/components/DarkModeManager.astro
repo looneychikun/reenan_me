@@ -5,7 +5,7 @@ import SvgMoon from '../assets/icons/moon.svg';
 ---
 <dark-mode-manager>
   <Fragment slot="head">
-    <script is:inline>
+    <script>
 			if (localStorage.getItem('theme') === 'light') {
 				document.documentElement.dataset.theme = 'bumblebee'
 			}

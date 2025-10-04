@@ -18,13 +18,21 @@ const { activeTab } = Astro.props;
     connectedCallback() {
       activeTab = this.dataset.activeTab as string;
 
+      if (activeTab === TabPage.Content.toString()) {
+        this.querySelectorAll('a').forEach((n) => {
+          if (n.dataset.toggle === TabPage.Blog.toString())
+            n.classList.add('tab-active');
+        });
+        // content pages function as multipage apps
+        return;
+      }
+
       // expand the tab we're on
       this.querySelectorAll('a').forEach((e) => {
         if (e.dataset.toggle as string === activeTab) e.classList.add('tab-active');
       });
       if (activeTab !== TabPage.None.toString()) 
-        ((document.getElementById(activeTab.toString()) as HTMLInputElement).parentElement as HTMLDivElement)
-        .classList.add('collapse-open');
+        (document.getElementById(activeTab) as HTMLInputElement).checked = true;
       
       // Hijack navigation and simulate single page app
       this.querySelectorAll('a').forEach((n) => {
