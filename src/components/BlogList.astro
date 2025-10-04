@@ -8,17 +8,15 @@ const images = import.meta.glob(`../content/blog/img/*.{jpg,jpeg,png,gif}`);
 ---
 
 <blog-home>
-  <ul class="[&>*:nth-child(even)]:bg-base-200">
+  <ul class="[&>*:nth-child(even)]:bg-base-200 shadow-md flex">
     { posts.map(post => 
       <li class="list-row">
-        <div class="flex">
-          <div class="w-64">
+        <div class="">
+          <div>
             <a href={`/blog/posts/${post.id}`}>
               <Image 
                 src={images[`../content/blog/img/${post.data.image}`]().then()} 
-                alt={post.data.title} loading="lazy"
-                class="ml-0 mt-0 mb-0"
-                height="250"
+                alt={post.data.title} loading="lazy" class="size-50 rounded-box"
               />
             </a>
           </div>
