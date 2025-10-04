@@ -22,7 +22,7 @@ const { activeTab } = Astro.props;
       this.querySelectorAll('a').forEach((e) => {
         if (e.dataset.toggle as string === activeTab) e.classList.add('tab-active');
       });
-      if (activeTab != TabPage.None.toString()) 
+      if (activeTab !== TabPage.None.toString()) 
         ((document.getElementById(activeTab.toString()) as HTMLInputElement).parentElement as HTMLDivElement)
         .classList.add('collapse-open');
       
@@ -45,7 +45,7 @@ const { activeTab } = Astro.props;
 
 <tab-nav data-active-tab={activeTab}>
   <div role="tablist" class="tabs tabs-lift">
-    <!-- on your own page you are a rollup link -->
+    <!-- Navigation is hijacked above, but keep href's for SEO -->
     <a href="/about" data-toggle={TabPage.About} role="tab" class="tab">About</a>
     <a href="/blog" data-toggle={TabPage.Blog} role="tab" class="tab">Blog</a> 
   </div>
