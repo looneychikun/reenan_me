@@ -50,37 +50,3 @@ const { activeTab } = Astro.props;
 		</div>
 	</body>
 </html>
-
-<script>
-	// let shelf : HTMLDivElement;
-
-	// const toggleHide = (tab: string) => {
-	// 	shelf.classList.toggle('open');
-	// 	document.getElementById(tab)?.classList.toggle('tab-active');
-	// };
-	// const aboutHide = () => toggleHide('tabAbout');
-	// const blogHide = () => toggleHide('tabBlog'); 
-
-	// document.addEventListener('astro:page-load', (e) => {
-	// 	shelf = document.getElementById('shelf') as HTMLDivElement;
-	// 	document.getElementById('tabAbout')?.addEventListener('click', aboutHide);
-	// 	document.getElementById('tabBlog')?.addEventListener('click', blogHide);
-	// 	shelf.style.maxHeight = shelf.scrollHeight.toString() + 'px';
-	// });
-</script>
-
-<style>
-.shelf {
-	transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-	opacity: 0;
-	overflow: hidden;
-	min-height: 0;
-	max-height: 0;
-}
-.shelf.open {
-	transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-	max-height: 1000px;
-	overflow: visible;
-	opacity: 1;
-}
-</style>
