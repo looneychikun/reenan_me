@@ -8,14 +8,14 @@ const images = import.meta.glob(`../content/blog/img/*.{jpg,jpeg,png,gif}`);
 ---
 
 <blog-home>
-  <div class="w-3/4 p-4 pt-8">
+  <div class="w-3/4 p-4 pt-8>
     <h1 class="text-5xl bg-linear-to-br from-primary to-accent bg-clip-text text-transparent"><strong>Recent Posts</strong></h1>
   </div>
-    <ul class="list [&>*:nth-child(even)]:bg-base-200 shadow-md">
+    <ul class="list [&>*:nth-child(even)]:bg-base-100&>* [&>*]:nth-child(even)]:bg-base-300 shadow-md">
       { posts.map(post => 
         <li class="list-row">
           <div class="card lg:card-side">
-            <figure class="lg:max-w-1/2">
+            <figure class="lg:max-w-1/2 w-full h-50"0>
               <a href={`/blog/posts/${post.id}`}>
                 <Image 
                   src={images[`../content/blog/img/${post.data.image}`]().then()} 
